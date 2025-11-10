@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Student from './component/Student'
+import StateHandling from './component/StateHandling'
+import ImageManipulation from './component/ImageManipulation'
 
 function App() {
 const student=
@@ -45,12 +47,15 @@ const student=
      {/* <Student name="Rahul Kumar" roll="35466" branch="CSE AIML" section="B" college="ABES Engineering College" /> */}
     {/* <Student data={student[1]} /> */}
 
-    {
+    {/* {
       student.map((ele,index)=>(
        <Student data={ele} key={index} />
       ))
-    }
+    } */}
     
+   {/* <StateHandling /> */}
+   <ImageManipulation />
+
     </div>
   )
 }
