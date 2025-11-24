@@ -8,7 +8,7 @@ import Registration from './component/Registration'
 import Dashboard from './component/Dashboard'
 import MainLayout from './component/MainLayout'
 function App() {
-  
+  const[logData,setLogDat]=useState();
 
   return (
     <>
@@ -17,11 +17,16 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Registration />} />
+        <Route path='/register' element={<Registration regData={setLogDat} />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/mainlayout' element={<MainLayout/>} />
+        <Route path='/' element={<MainLayout/>} />
       </Routes>
       </BrowserRouter>
+      <h2 style={{backgroundColor:'brown', color:'white'}}>
+        {
+          JSON.stringify(logData)
+        }
+      </h2>
     </>
   )
 }
