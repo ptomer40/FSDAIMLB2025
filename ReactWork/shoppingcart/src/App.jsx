@@ -16,7 +16,7 @@ function App() {
 
       <BrowserRouter>
       <Routes>
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login loginData={logData} />} />
         <Route path='/register' element={<Registration regData={setLogDat} />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/' element={<MainLayout/>} />
