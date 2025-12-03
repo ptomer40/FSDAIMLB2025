@@ -5,7 +5,7 @@ const[name,setName]=useState();
 const[email,setEmail]=useState();
 const[password,setPassword]=useState();
 
-  function getData(e){
+  async function getData(e){
     e.preventDefault();
     //alert("Hii"+name+email+password)
      const data={
@@ -13,9 +13,16 @@ const[password,setPassword]=useState();
       email,
       password
      }
-     regData(data);
+    //  regData(data);
     //  console.log(data)
 
+  const response=await fetch('http://172.16.42.110:5656/register',{
+    method:'post',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  })
+                const res=await response.json();
+                alert(res.msg);
   }
   return (
     <div>
