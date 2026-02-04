@@ -1,7 +1,7 @@
 .box{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 100px 70px 500px;
+    grid-template-rows: 100px 70px 500px 200px;
     border: 1px solid red;
     background-color: chartreuse;
 }
@@ -108,3 +108,13 @@ height: 400px;
     border: 1px dotted brown;
     background-color: yellow;
 } */
+
+.footer{
+grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}

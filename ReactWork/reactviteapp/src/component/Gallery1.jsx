@@ -1,8 +1,17 @@
 import React from 'react'
+import Profile1 from './Profile1'
 
 function Gallery1() {
   return (
-    <div>Gallery1</div>
+    <div>
+      <div>
+      <Profile1 />
+      </div>
+      <div>
+        <Profile1 />
+      </div>
+
+    </div>
   )
 }
 

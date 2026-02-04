@@ -13,7 +13,7 @@ function App() {
       <h2>Welcome to React App</h2>
       <div>
         {/* <Profile /> */}
-        <Profile1 />
+        {/* <Profile1 /> */}
       </div>
     </div>
   )
