@@ -14,4 +14,46 @@ function writeData(){
     return statusmsg;
 }
 
-module.exports=writeData;
+function readData(){
+    let statusmsg="";
+    try{
+         const data=fs.readFileSync('student.txt',{encoding:'utf-8'})
+         statusmsg=data;
+    }catch(e){
+       statusmsg=e;
+    }
+    return statusmsg;
+}
+
+
+
+function deleteFile(){
+    let statusmsg="";
+    try{
+         fs.unlinkSync('student.txt')
+         statusmsg="File deleted successfully"
+
+    }catch(e){
+     statusmsg=e
+    }
+return statusmsg
+}
+
+
+function dataCopy(){
+
+}
+
+async function fileReadAsync(){
+    let statusmsg="";
+    try{
+      statusmsg=await fs1.readFile('student.txt',{encoding:'utf-8'})
+    }catch(e){
+     statusmsg=e;
+    }
+return statusmsg
+}
+
+const obj={writeData,readData,deleteFile,fileReadAsync}
+
+module.exports=obj;
