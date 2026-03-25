@@ -7,9 +7,16 @@ const PORT=4007;
 const server=http.createServer( async(req,res)=>{
 //     res.setHeader('Content-Type','text/html');
 // res.end("<h2 style=color:red>Hello, Welcome to Node Server</h2>");
-  res.setHeader('Access-Control-Allow-Origin', '*');
-     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+res.setHeader('Access-Control-Allow-Origin', '*'); // Or '' to allow all
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  // Handle preflight requests (OPTIONS method)
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
      
 if(req.url=='/msg' && req.method=="GET"){
     res.setHeader('Content-Type','text/html');
@@ -69,7 +76,7 @@ if(req.url=='/register' && req.method=="POST"){
 
   req.on('end',async()=>{
   const {name,email,password}=JSON.parse(body);
-  // console.log(name+email+password)
+   console.log(name+email+password)
         const fdata=await fs.readFile('student.json',{encoding:'utf-8'})
                arr=JSON.parse(fdata);
 
