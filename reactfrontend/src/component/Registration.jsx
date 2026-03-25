@@ -5,15 +5,20 @@ function Registration() {
   const[email,setEmail]=useState();
   const[password,setPassword]=useState()
 
-    async function captureData()
+    async function captureData(e)
+
       {
-      //  alert("Hiiii...."+name+email+password)
+        e.preventDefault();
+        //alert("Hiiii...."+name+email+password)
         const res=await fetch("http://localhost:4007/register",{
           method:'POST',
           body:JSON.stringify({name,email,password}),
           headers:{'Content-Type':'application/json'}
         })
 
+        const response=await res.json();
+        alert(response.msg);
+            
       }
 
 return (
